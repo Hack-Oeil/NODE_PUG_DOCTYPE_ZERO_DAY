@@ -2,6 +2,8 @@ version: '3.9'
 services:
   bot:
     build: bot/
+    labels:
+      ho.ctf.cyrhades: bot
     container_name: ho-cyrhades-bot
     command: npm start
     healthcheck:
@@ -11,6 +13,8 @@ services:
       retries: 10
   webserver:
     build: http/
+    labels:
+      ho.ctf.cyrhades: webserver
     restart: always
     ports:
       - "80:80"
