@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  section.container.mx-auto.max-w-3xl.bg-white.shadow-md.rounded-xl.p-8.mt-8
+    h1.text-2xl.font-bold.mb-4 Contenu de la copie enregistrée (ID #{id})
+
+    pre.bg-gray-100.p-4.rounded.text-sm.text-gray-800.whitespace-pre-wrap= content
+
+    a(
+      href="./"
+      class="inline-block mt-6 bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300 transition"
+    ) ⬅️ Retour à l'accueil

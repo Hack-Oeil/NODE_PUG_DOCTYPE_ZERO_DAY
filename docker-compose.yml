@@ -1,25 +1,23 @@
 version: '3.9'
 services:
-  bot:
-    build: bot/
+  ho-cyrhades-bot:
+    build: ./.docker/bot/
     labels:
-      ho.ctf.cyrhades: bot
-    container_name: ho-cyrhades-bot
+      ho.ctf.cyrhades: "1"
     command: npm start
     healthcheck:
       test: ["CMD", "wscat", "-c", "ws://localhost:8282"]
       interval: 5s
       timeout: 3s
       retries: 10
-  webserver:
-    build: http/
+  ho-webserver:
+    build: ./.docker/http/
     labels:
-      ho.ctf.cyrhades: webserver
-    restart: always
+      ho.ctf.cyrhades: "1"
+    environment:
+      - HOOS_CTF_USERNAME=${HOOS_CTF_USERNAME:-}
     ports:
-      - "80:80"
-    container_name: ho-webserver
-    command: npm start
+      - ${PORT}:80
     depends_on:
-      bot:
+      ho-cyrhades-bot:
         condition: service_healthy

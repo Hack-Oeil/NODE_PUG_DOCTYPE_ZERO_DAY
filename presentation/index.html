@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head lang="fr">
+    <meta charset="UTF-8">
+    <!--Page Title-->
+    <title>Hack-Oeil - Les CTFs de Cyrhades</title>
+    <!--Meta Keywords and Description-->
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <!--Favicon-->
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" title="Favicon"/>
+    <!-- Main CSS Files -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- Namari Color CSS -->
+    <link rel="stylesheet" href="./assets/css/namari-color.css">
+    <!--Google Webfonts-->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <script>document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('a').forEach((link)=>{link.addEventListener('click',(event)=>{const a=event.target.closest('a[href^="http"]');if(a){event.preventDefault();window.parent.postMessage({type:"open-external",url:a.href},"*");}});});});</script>
+</head>
+<body>
+
+<div id="wrapper">
+    <!--Main Content Area-->
+    <main id="content">
+        <!--Ctf-->
+        <section class="ctf scrollto">
+            <div class="row clearfix">        
+                <div class="col-39">  
+                    <div class="section-heading">
+                        <h3>Challenge #4</h3>
+                        <h2 class="section-title">Faille Doctype PUG 0-day</h2>
+                        <p class="section-subtitle">
+                            Petite faille IDOR mais avec une jolie injection XSS depuis un doctype sur le moteur de template PUG.
+                            Commencez par chercher sur le site, pour trouver le mail que j'avais envoyé à l'Agence nationale 
+                            de la sécurité des systèmes d'information (ANSSI).
+                            <br />
+                            Ce problème n'ayant jamais été pris en considération cela en fait une faille 0-day. Il est de difficulté 3 car il n'y a aucun moyen de trouver d'information sur internet, 
+                            vous devrez analyser le code source de PUG pour voir comment est utilisé le doctype dans PUG.
+                            <br /> <br />
+                            Pour cela vous devez avoir les connaissances suivantes :
+                            <ul id="prerequisites" class="col-1">
+                                <li>IDOR - Insecure direct object references </li>   
+                                <li>Injection XSS Reflected</li>                             
+                            </ul>  
+                        </p>
+                    </div>
+                </div> 
+            </div>
+            <div class="row clearfix">        
+                <div class="col-39">  
+                    <div class="section-heading">
+                        <h3>Apprentissage</h3>
+                        <h2 class="section-title">Documentations et Vidéos</h2>
+                        <p class="section-subtitle">
+                            Information sur la faille XSS
+                            <br />
+                            <a href="https://www.youtube.com/watch?v=3U3EaxAE3ts" target="_blank">XSS Reflected 1</a>
+                            <br />
+                            <a href="https://www.youtube.com/watch?v=dxWZfQie3co" target="_blank">XSS Reflected 2</a>
+                        </p>
+                    </div>
+                </div> 
+            </div>
+
+            <div class="row clearfix">        
+                <div class="col-39">  
+                    <div class="section-heading">
+                        <h3>Aide</h3>
+                        <h2 class="section-title">Conseils et indices</h2>
+                        <p class="section-subtitle">
+                            <a target="_blank" href="https://discord.com/channels/1175764392307077120/1176173464411979806">Fil sur le Discord</a>
+                        </p>
+                    </div>
+                </div> 
+            </div>
+        </section>
+        <!--End of Ctf-->
+    </main>
+    <!--End Main Content Area-->
+    <a id="scrollUp" href="#wrapper" style="position: fixed; z-index: 1000;" title="Remonter en tête de site"></a>
+</div>
+</body>
+</html>

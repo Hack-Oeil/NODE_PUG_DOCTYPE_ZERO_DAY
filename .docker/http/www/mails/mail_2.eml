@@ -1,0 +1,29 @@
+From: cyrhades@youpimail.com
+To: cert-fr.cossi@ssi.gouv.fr
+Subject: Déclaration découverte faille de sécurité (PUG)
+
+Bonjour,
+
+Je viens vers vous car j'ai découvert une faille de sécurité (de type XSS) sur le moteur de template 
+PUG (très populaire, plus de 1 million de téléchargement cette semaine).
+Le problème étant que PUG permet d'envoyer n'importe quelle valeur en tant que doctype.
+
+Ce moteur de template est utilisé en NodeJS,
+
+Cordialement,  
+Cyrhades
+
+
+-------------------------------
+Réponse - 16 Apr 2022 18:15
+
+From: cert-fr.cossi@ssi.gouv.fr
+To: cyrhades@youpimail.com
+
+Bonjour,
+
+Merci pour ce signalement bien pris en compte.
+
+Cordialement,  
+KB  
+ANSSI/SDO/CERT-FR

@@ -1,0 +1,18 @@
+extends layout.pug 
+
+block content
+  section.container.mx-auto.max-w-xl.bg-white.shadow-md.rounded-xl.p-8.mt-8
+    h1.text-2xl.font-bold.text-green-600.mb-4 ✅ Mail envoyé !
+    p.text-gray-700.mb-4 Une copie a bien été enregistrée sous l'identifiant :
+    p.text-blue-600.font-mono.mb-6 mail_#{id}.eml
+
+    .flex.space-x-4
+      a(
+        href="./"
+        class="bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300 transition"
+      ) ⬅️ Retour à l'accueil
+
+      a(
+        href=`./view?id=${id}`
+        class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
+      ) 📄 Voir la copie enregistrée

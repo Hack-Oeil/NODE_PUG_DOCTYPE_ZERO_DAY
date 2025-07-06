@@ -1,0 +1,50 @@
+html(lang="fr")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title YoupiMail - Éditeur de Mail
+    script(src="https://cdn.tailwindcss.com")
+    link(rel="icon" href="./favicon.png")
+    style.
+      .alert-info {
+        @apply bg-blue-100 border border-blue-300 text-blue-800 px-4 py-3 rounded mb-4;
+      }
+      .alert-danger {
+        @apply bg-red-100 border border-red-300 text-red-800 px-4 py-3 rounded mb-4;
+      }
+
+  body.bg-gray-100.min-h-screen.flex.flex-col
+
+    // Header
+    header.bg-blue-600.text-white.shadow-md
+      .container.mx-auto.flex.justify-between.items-center.px-4.py-5
+        a(href="./").text-2xl.font-bold 📬 YoupiMail 
+        nav.sm.flex.space-x-6.text-sm
+          a(href="./", class="hover:underline") Accueil
+          a(href="./contact", class="hover:underline") Déclarer un bogue
+
+    // Notifications
+    if typeof getMessages === 'function'
+    - var messages = getMessages()
+    if messages && (messages.notify || messages.error)
+      .container.mx-auto.mt-4.px-4.space-y-2
+        if messages.notify
+          each msg in messages.notify
+            .rounded-lg.bg-blue-100.border.border-blue-300.text-blue-800.p-4.text-sm.shadow-md
+              = msg
+        if messages.error
+          each msg in messages.error
+            .rounded-lg.bg-red-100.border.border-red-300.text-red-800.p-4.text-sm.shadow-md
+              = msg
+
+    if flag
+      .m-4.rounded-lg.bg-green-100.border.border-green-300.text-green-800.p-4.text-sm.shadow-md.container.mx-auto
+        | Bien joué le flag est: #{flag}
+
+    // Contenu principal (injecté dynamiquement par les vues)
+    main.container.mx-auto.p-6.flex-grow
+      block content
+
+    // Footer
+    footer.bg-white.border-t.text-gray-500.text-center.text-sm.py-4.mt-6.shadow-inner
+      p 2025 &copy; YoupiMail – Mon service de messagerie perso
