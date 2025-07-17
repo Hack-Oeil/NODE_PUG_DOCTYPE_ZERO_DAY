@@ -16,7 +16,25 @@
     <link rel="stylesheet" href="./assets/css/namari-color.css">
     <!--Google Webfonts-->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
-    <script>document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('a').forEach((link)=>{link.addEventListener('click',(event)=>{const a=event.target.closest('a[href^="http"]');if(a){event.preventDefault();window.parent.postMessage({type:"open-external",url:a.href},"*");}});});});</script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+    // Vérifie si la fenêtre est dans une iframe
+    if (window.self !== window.top) {
+        document.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', (event) => {
+            const a = event.target.closest('a[href^="http"]');
+            if (a) {
+            event.preventDefault();
+            window.parent.postMessage({
+                type: "open-external",
+                url: a.href
+            }, "*");
+            }
+        });
+        });
+    }
+    });
+    </script>
 </head>
 <body>
 
@@ -53,11 +71,21 @@
                         <h3>Apprentissage</h3>
                         <h2 class="section-title">Documentations et Vidéos</h2>
                         <p class="section-subtitle">
-                            Information sur la faille XSS
+                            <a target="_blank" href="https://ctfs.cyrhades.fr/ressources/XSS.pdf">
+                                <img src="./assets/images/link.png" />
+                                Information sur la faille XSS
+                            </a>
                             <br />
-                            <a href="https://www.youtube.com/watch?v=3U3EaxAE3ts" target="_blank">XSS Reflected 1</a>
+                             <a target="_blank" href="https://www.youtube.com/watch?v=3U3EaxAE3ts">
+                                <img src="./assets/images/youtube.png" />
+                                XSS Reflected 1
+                            </a>
                             <br />
-                            <a href="https://www.youtube.com/watch?v=dxWZfQie3co" target="_blank">XSS Reflected 2</a>
+                            <a target="_blank" href="https://www.youtube.com/watch?v=dxWZfQie3co">
+                                <img src="./assets/images/youtube.png" />
+                                XSS Reflected 2
+                            </a>
+                            <br />
                         </p>
                     </div>
                 </div> 
