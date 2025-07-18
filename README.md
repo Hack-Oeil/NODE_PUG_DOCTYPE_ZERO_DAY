@@ -13,7 +13,7 @@ Ce problème n'ayant jamais été pris en considération cela en fait une faille
 
 
 ## Aperçu
-![./.docker/infos/capture.jpg](./.docker/infos/capture.jpg)
+![./presentation/assets/images/capture.jpg](./presentation/assets/images/capture.jpg)
 
 
 -----------
